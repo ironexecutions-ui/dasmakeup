@@ -53,7 +53,7 @@ export default function AdminTabela({ tipo = "admin" }) {
     async function apagar(id) {
         if (!window.confirm("Tem certeza que deseja apagar este usuário?")) return;
 
-        await fetch(`${API_URL}/das/admin/usuarios/${id}`, {
+        await fetch(`${API_URL}/das/admin/usuarios/admin/${id}`, {
             method: "DELETE"
         });
 
