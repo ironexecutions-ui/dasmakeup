@@ -24,8 +24,8 @@ export default function ModalFiltro({ fechar, setProdutos }) {
     }
 
     return (
-        <div className="modal-overlay" onClick={fechar}>
-            <div className="modal-filtro" onClick={e => e.stopPropagation()}>
+        <div className="aq-modal-overlay" onClick={fechar}>
+            <div className="aq-modal-filtro" onClick={e => e.stopPropagation()}>
 
                 <h2>Filtrar produtos</h2>
 
@@ -53,7 +53,7 @@ export default function ModalFiltro({ fechar, setProdutos }) {
                     onChange={e => setMax(e.target.value)}
                 />
 
-                <button className="btnn-buscar" onClick={buscar}>
+                <button className="aq-btnn-buscar" onClick={buscar}>
                     Buscar
                 </button>
 
