@@ -1,7 +1,8 @@
 import { API_URL } from "../../../config";
 
 export function iniciarGoogleLogin(callback) {
-    /* global google */
+    /* global googleffv
+    cvxcv */
 
     google.accounts.id.initialize({
         client_id: "992388111982-a0hootauhov3044flkk0pr4ndtsqiug7.apps.googleusercontent.com",
