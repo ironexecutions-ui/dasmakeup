@@ -307,7 +307,7 @@ export default function Produtos() {
             )}
 
             {modoForm && (
-                <div className="pppp-form-box">
+                <div className="ppp-form-box">
 
                     <button className="ppp-btn-voltar" onClick={() => setModoForm(false)}>
                         ← Voltar
