@@ -1,0 +1,409 @@
+/* ===============================
+   HEADER BASE
+=============================== */
+.header-box {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 74px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    background: linear-gradient(180deg, #00000071, #010f2465);
+    z-index: 999;
+    border-radius: 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.35s ease;
+}
+
+.header-visivel {
+    transform: translateY(0);
+}
+
+.header-escondido {
+    transform: translateY(-100%);
+}
+
+/* ===============================
+   LADO ESQUERDO
+=============================== */
+.header-esq {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-m {
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.header-titulo {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+}
+
+/* ===============================
+   CENTRO
+=============================== */
+.header-centro {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.header-input {
+    width: 100%;
+    max-width: 420px;
+    padding: 12px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #f5f5f8;
+    color: #111111;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.header-input::placeholder {
+    color: rgb(0, 0, 0);
+
+}
+
+.header-input:hover {
+    background-color: #b4ddf586;
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* ===============================
+   LADO DIREITO
+=============================== */
+.header-dir {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* ===============================
+   BOTÕES
+=============================== */
+.header-btn {
+    background-color: #000768;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.header-btn:hover {
+    background-color: #262626;
+    transform: translateY(-1px);
+}
+
+.header-btn.ativo {
+    background-color: #ffffff;
+    color: #111111;
+    font-weight: 600;
+}
+
+/* ===============================
+   CARRINHO
+=============================== */
+.header-btn-carrinho {
+    position: relative;
+    padding: 10px 14px;
+}
+
+.carrinho-icone-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrinho-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    border-radius: 999px;
+    background-color: #e63946;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===============================
+   PERFIL
+=============================== */
+.perfil-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.header-ttl {
+    color: #ffffff;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+}
+
+.header-ttl:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Piscar quando CEP não existe */
+.perfil-piscando {
+    animation: perfilPiscar 1.2s infinite;
+}
+
+@keyframes perfilPiscar {
+    0% {
+        background-color: transparent;
+    }
+
+    50% {
+        background-color: rgba(230, 57, 70, 0.25);
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}
+
+/* ===============================
+   AVISO ENDEREÇO
+=============================== */
+.aviso-endereco {
+    position: absolute;
+    top: 36px;
+    right: 0;
+    background-color: #e63946;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* ===============================
+   COMPRAS PENDENTES
+=============================== */
+.compras-piscando {
+    animation: comprasPiscar 1.1s infinite;
+}
+
+@keyframes comprasPiscar {
+    0% {
+        box-shadow: 0 0 0 rgba(230, 57, 70, 0);
+    }
+
+    50% {
+        box-shadow: 0 0 12px rgba(230, 57, 70, 0.8);
+    }
+
+    100% {
+        box-shadow: 0 0 0 rgba(230, 57, 70, 0);
+    }
+}
+
+/* ===============================
+   HEADER COMPACTO (BOLINHA)
+=============================== */
+.header-bolinha {
+    position: fixed;
+    top: 14px;
+    left: 14px;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-color: #111111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+.header-bolinha:hover {
+    transform: scale(1.05);
+}
+
+.bolinha-logo {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+}
+
+/* ===============================
+   MODAL AREA
+=============================== */
+.modal-area {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+@media (max-width: 1024px) {
+
+    .header-box {
+        height: auto;
+        padding: 10px 18px;
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+
+    .header-esq {
+        flex: 0 0 auto;
+    }
+
+    .header-centro {
+        flex: 1 1 100%;
+        order: 3;
+        justify-content: center;
+    }
+
+    .header-input {
+        max-width: 100%;
+    }
+
+    .header-dir {
+        flex: 1 1 auto;
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .header-box {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px;
+        border-radius: 28px;
+        gap: 10px;
+    }
+
+    .header-esq {
+        justify-content: center;
+    }
+
+    .header-centro {
+        order: 2;
+        width: 100%;
+    }
+
+    .header-input {
+        width: 100%;
+        max-width: none;
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+
+    .header-dir {
+        order: 3;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .header-btn {
+        flex: 1;
+        text-align: center;
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .header-btn-carrinho {
+        flex: 0 0 auto;
+    }
+
+    .perfil-wrapper {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .header-box {
+        padding: 10px;
+        border-radius: 22px;
+    }
+
+    .logo-m {
+        width: 36px;
+        height: 36px;
+    }
+
+    .header-titulo {
+        font-size: 16px;
+    }
+
+    .header-dir {
+        gap: 6px;
+    }
+
+    .header-btn {
+        font-size: 12px;
+        padding: 9px 8px;
+    }
+
+    .header-ttl {
+        max-width: 110px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
+    }
+
+    .aviso-endereco {
+        top: 30px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
+
+@media (max-width: 360px) {
+
+    .header-box {
+        padding: 8px;
+    }
+
+    .header-btn {
+        padding: 8px 6px;
+        font-size: 11px;
+    }
+
+    .header-ttl {
+        max-width: 90px;
+    }
+
+    .carrinho-badge {
+        min-width: 14px;
+        height: 14px;
+        font-size: 9px;
+    }
+}

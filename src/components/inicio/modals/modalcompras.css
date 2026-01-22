@@ -1,0 +1,452 @@
+/* ===============================
+   CONTAINER PRINCIPAL
+=============================== */
+.compras-container {
+    background: #ffffff;
+    color: #000000;
+    padding: 30px 40px 50px;
+    width: 100%;
+    margin: auto auto;
+    border-radius: 14px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ===============================
+   TÍTULOS
+=============================== */
+.titulo-geral {
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.titulo-geral::after {
+    content: "";
+    display: block;
+    width: 46px;
+    height: 4px;
+    background: #6fb9fe;
+    margin-top: 8px;
+    border-radius: 2px;
+}
+
+.titulo-entregues {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 30px 0 20px;
+}
+
+/* ===============================
+   LOADING
+=============================== */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 0;
+}
+
+.spinner {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 4px solid #e5e7eb;
+    border-top-color: #6fb9fe;
+    animation: spin 0.9s linear infinite;
+}
+
+.loading-container p {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #444;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===============================
+   CARD DE PEDIDO
+=============================== */
+.pedido-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    background: #03016e !important;
+}
+
+/* ===============================
+   PROGRESSO
+=============================== */
+.progress-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.progress-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.progress-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #e5e7eb;
+}
+
+.progress-dot.ativo {
+    background: #6fb9fe;
+}
+
+.progress-line {
+    width: 60px;
+    height: 3px;
+    background: #e5e7eb;
+}
+
+.progress-line.ativa {
+    background: #6fb9fe;
+}
+
+.progress-line.animando {
+    background: linear-gradient(90deg,
+            #6fb9fe,
+            #c7d2fe,
+            #6fb9fe);
+    background-size: 200% 100%;
+    animation: linha 1.2s linear infinite;
+}
+
+@keyframes linha {
+    to {
+        background-position: -200% 0;
+    }
+}
+
+.progress-text {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+
+/* ===============================
+   INFORMAÇÕES DO PEDIDO
+=============================== */
+.pedido-info {
+    margin-bottom: 16px;
+}
+
+.rast-box p {
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.rast-box a {
+    color: #6fb9fe;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.rast-msg {
+    font-size: 13px;
+    color: #ffffff !important;
+}
+
+/* ===============================
+   BOTÕES
+=============================== */
+.btn-chegou,
+.btn-avaliar,
+.bbtn-chegou {
+    padding: 10px 18px;
+    border-radius: 22px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-chegou,
+.btn-avaliar {
+    background: #6fb9fe;
+    color: #ffffff;
+}
+
+.btn-chegou:hover,
+.btn-avaliar:hover {
+    opacity: 0.9;
+}
+
+.bbtn-chegou {
+    background: #ef4444;
+    color: #ffffff;
+}
+
+/* ===============================
+   PRODUTOS DO PEDIDO
+=============================== */
+.pedido-produtos {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pedido-produto-item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    transition: background 0.2s ease;
+}
+
+.pedido-produto-item:hover {
+    background: #00376e;
+}
+
+.pedido-img {
+    width: 54px;
+    height: 54px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1px solid #e5e7eb;
+}
+
+.pedido-prod-nome {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pedido-prod-qt {
+    font-size: 16px;
+    color: #ffffff;
+}
+
+/* ===============================
+   ENTREGUES
+=============================== */
+.entregue-item {
+    border: 1px dashed #e5e7eb;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 18px;
+    background: #ffffff;
+}
+
+/* ===============================
+   AVALIAÇÕES
+=============================== */
+.ww-avaliacao-existente {
+    margin-top: 6px;
+}
+
+.ww-estrelas {
+    display: flex;
+    gap: 4px;
+    font-size: 16px;
+}
+
+.ww-estrela {
+    color: #e5e7eb;
+}
+
+.ww-estrela.ww-ativa {
+    color: #6fb9fe;
+}
+
+.ww-comentario {
+    font-size: 13px;
+    color: #444;
+    margin-top: 6px;
+    font-style: italic;
+}
+
+/* ===============================
+   TEXTO PADRÃO
+=============================== */
+.nenhum-pedido {
+    font-size: 15px;
+    color: #444;
+}
+
+/* ===============================
+   RESPONSIVO GERAL
+=============================== */
+
+/* Tablets e telas médias */
+@media (max-width: 1024px) {
+
+    .compras-container {
+        padding: 26px 24px 40px;
+    }
+
+    .titulo-geral {
+        font-size: 24px;
+    }
+
+    .titulo-entregues {
+        font-size: 20px;
+    }
+
+    .pedido-card {
+        padding: 18px 20px;
+    }
+
+    .progress-text {
+        font-size: 20px;
+    }
+
+    .pedido-prod-qt {
+        font-size: 15px;
+    }
+}
+
+/* Celulares grandes */
+@media (max-width: 768px) {
+
+    .compras-container {
+        padding: 22px 18px 36px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .titulo-geral {
+        font-size: 22px;
+    }
+
+    .titulo-entregues {
+        font-size: 18px;
+    }
+
+    .pedido-card {
+        padding: 16px;
+        margin-bottom: 20px;
+    }
+
+    .progress-box {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .progress-line {
+        width: 40px;
+    }
+
+    .progress-text {
+        font-size: 18px;
+    }
+
+    .pedido-produtos {
+        gap: 10px;
+    }
+
+    .pedido-produto-item {
+        padding: 8px;
+    }
+
+    .pedido-img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .pedido-prod-nome {
+        font-size: 13px;
+    }
+
+    .pedido-prod-qt {
+        font-size: 14px;
+    }
+
+    .btn-chegou,
+    .btn-avaliar,
+    .bbtn-chegou {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+
+    .compras-container {
+        padding: 18px 14px 30px;
+    }
+
+    .titulo-geral {
+        font-size: 20px;
+    }
+
+    .titulo-geral::after {
+        width: 36px;
+    }
+
+    .titulo-entregues {
+        font-size: 17px;
+    }
+
+    .pedido-card {
+        padding: 14px;
+    }
+
+    .progress-dot {
+        width: 12px;
+        height: 12px;
+    }
+
+    .progress-line {
+        width: 32px;
+        height: 2px;
+    }
+
+    .progress-text {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .rast-box p {
+        font-size: 13px;
+    }
+
+    .rast-msg {
+        font-size: 12px;
+    }
+
+    .pedido-produto-item {
+        gap: 10px;
+    }
+
+    .pedido-img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .pedido-prod-nome {
+        font-size: 12.5px;
+    }
+
+    .pedido-prod-qt {
+        font-size: 13px;
+    }
+
+    .entregue-item {
+        padding: 16px;
+    }
+
+    .ww-comentario {
+        font-size: 12px;
+    }
+
+    .nenhum-pedido {
+        font-size: 14px;
+    }
+}

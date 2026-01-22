@@ -1,0 +1,78 @@
+.pm-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9000;
+}
+
+.pm-box {
+    background: #1d232f;
+    width: 90%;
+    max-width: 420px;
+    border-radius: 14px;
+    padding: 20px;
+    animation: fadeIn .25s ease;
+    color: white;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.pm-fechar {
+    background: none;
+    border: none;
+    color: #d4af37;
+    font-size: 26px;
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+}
+
+.pm-imgs {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    margin-bottom: 12px;
+}
+
+.pm-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.pm-nome {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.pm-desc {
+    opacity: .84;
+    margin-bottom: 12px;
+}
+
+.pm-caracts li {
+    opacity: .75;
+    margin-bottom: 4px;
+}
+
+.pm-total {
+    font-size: 18px;
+    margin-top: 14px;
+    color: #d4af37;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

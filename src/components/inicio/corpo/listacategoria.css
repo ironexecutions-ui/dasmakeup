@@ -1,0 +1,433 @@
+/* ===============================
+   CONTAINER PRINCIPAL
+=============================== */
+.categorias-box {
+    width: 100% !important;
+    display: flex;
+    padding: 30px;
+    border-radius: 30px !important;
+    flex-direction: column;
+    gap: 44px;
+    background: transparent;
+}
+
+/* ===============================
+   GRUPO DE CATEGORIA
+=============================== */
+.categoria-grupo {
+    display: flex;
+    border-radius: 40px;
+    flex-direction: column;
+    gap: 18px;
+    position: relative;
+}
+
+.categoria-vazia {
+    width: 100%;
+    padding: 80px 20px;
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    animation: fadeUp 0.5s ease;
+}
+
+.categoria-vazia h2 {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    color: #000000;
+    text-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.65),
+        0 0 14px rgba(255, 255, 255, 0.12);
+}
+
+.categoria-vazia p {
+    font-size: 15px;
+    max-width: 440px;
+    line-height: 1.6;
+    color: rgba(5, 5, 5, 0.78);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* animação suave */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===============================
+   TÍTULO DA CATEGORIA
+=============================== */
+.categoria-titulo {
+    font-size: 22px;
+    font-weight: 600;
+    color: #000000 !important;
+    padding-left: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* detalhe lateral dourado */
+.categoria-titulo::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 3px;
+    height: 70%;
+    transform: translateY(-50%);
+    background: linear-gradient(180deg, #e6c670, #b9972e);
+    border-radius: 3px;
+}
+
+/* ===============================
+   LISTA DE PRODUTOS
+=============================== */
+.categoria-lista {
+    display: flex;
+    gap: 20px;
+    padding: 10px 6px 20px 6px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+/* ===============================
+   SCROLLBAR SIMPLES E ELEGANTE
+=============================== */
+.categoria-lista::-webkit-scrollbar {
+    height: 8px;
+}
+
+.categoria-lista::-webkit-scrollbar-track {
+    background: #1b1f2b;
+    border-radius: 6px;
+}
+
+.categoria-lista::-webkit-scrollbar-thumb {
+    background: #d4af37;
+    border-radius: 6px;
+}
+
+.categoria-lista::-webkit-scrollbar-thumb:hover {
+    filter: brightness(1.15);
+}
+
+/* ===============================
+   TÍTULO DA CATEGORIA
+=============================== */
+.categoria-titulo {
+    font-size: 22px;
+    font-weight: 600;
+    color: #e6c670;
+    padding-left: 12px;
+    letter-spacing: 0.5px;
+    position: relative;
+
+    text-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.55),
+        0 0 6px rgba(212, 175, 55, 0.18);
+
+    transition:
+        color 0.25s ease,
+        text-shadow 0.25s ease;
+}
+
+/* Linha decorativa principal */
+.categoria-titulo::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 3px;
+    height: 68%;
+    transform: translateY(-50%);
+    background: linear-gradient(180deg,
+            #e6c670,
+            #b9972e);
+    border-radius: 3px;
+
+    box-shadow:
+        0 0 6px rgba(212, 175, 55, 0.35);
+
+    transition:
+        height 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Micro destaque ao passar o mouse no grupo */
+.categoria-grupo:hover .categoria-titulo {
+    color: #f2d98a;
+    text-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.65),
+        0 0 10px rgba(212, 175, 55, 0.28);
+}
+
+.categoria-grupo:hover .categoria-titulo::before {
+    height: 80%;
+    box-shadow:
+        0 0 10px rgba(212, 175, 55, 0.55);
+}
+
+
+/* Linha horizontal sutil */
+.categoria-titulo::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    bottom: -8px;
+    width: 70px;
+    height: 2px;
+    background: linear-gradient(90deg,
+            #d4af37,
+            rgba(212, 175, 55, 0));
+    border-radius: 2px;
+}
+
+/* ===============================
+   LISTA HORIZONTAL
+=============================== */
+.categoria-lista {
+    display: flex;
+    gap: 20px;
+    padding: 16px 8px 22px 8px;
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    position: relative;
+
+    /* sensação mais sólida ao rolar */
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Snap dos cards */
+.categoria-lista>* {
+    scroll-snap-align: start;
+}
+
+/* ===============================
+   EFEITO DE PROFUNDIDADE NAS BORDAS
+=============================== */
+.categoria-lista::before,
+.categoria-lista::after {
+    content: "";
+    position: sticky;
+    top: 0;
+    width: 28px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.categoria-lista::before {
+    left: 0;
+    background: linear-gradient(90deg,
+            rgba(26, 31, 43, 0.92),
+            rgba(26, 31, 43, 0));
+}
+
+.categoria-lista::after {
+    right: 0;
+    background: linear-gradient(270deg,
+            rgba(26, 31, 43, 0.92),
+            rgba(26, 31, 43, 0));
+}
+
+/* Snap dos cards */
+.categoria-lista>* {
+    scroll-snap-align: start;
+}
+
+/* ===============================
+   SCROLLBAR PREMIUM
+=============================== */
+.categoria-lista::-webkit-scrollbar {
+    height: 8px;
+}
+
+.categoria-lista::-webkit-scrollbar-track {
+    background: linear-gradient(180deg,
+            #1b1f2b,
+            #161a24);
+    border-radius: 6px;
+
+    box-shadow:
+        inset 0 0 6px rgba(0, 0, 0, 0.65);
+}
+
+.categoria-lista::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg,
+            #b9972e 0%,
+            #d4af37 50%,
+            #eac55b 100%);
+    border-radius: 6px;
+
+    box-shadow:
+        0 0 6px rgba(212, 175, 55, 0.35);
+
+    transition:
+        filter 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.categoria-lista::-webkit-scrollbar-thumb:hover {
+    filter: brightness(1.15);
+    box-shadow:
+        0 0 10px rgba(212, 175, 55, 0.55);
+}
+
+/* Firefox */
+.categoria-lista {
+    scrollbar-color: #d4af37 #1b1f2b;
+    scrollbar-width: thin;
+}
+
+/* ===============================
+   LOADING CONTAINER
+=============================== */
+.categorias-loading {
+    width: 95%;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===============================
+   LOADER PREMIUM
+=============================== */
+.loader-ring {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    border: 4px solid rgba(212, 175, 55, 0.22);
+    border-top-color: #d4af37;
+
+    animation: spin 1s linear infinite;
+
+    box-shadow:
+        0 0 14px rgba(212, 175, 55, 0.35),
+        inset 0 0 6px rgba(0, 0, 0, 0.55);
+
+    /* evita tremida em alguns navegadores */
+    will-change: transform;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===============================
+   MICRO POLIMENTO VISUAL
+=============================== */
+.categoria-grupo:hover .categoria-titulo {
+    text-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.65),
+        0 0 10px rgba(212, 175, 55, 0.28);
+}
+
+/* Impede os cards de encolherem */
+.categoria-lista>* {
+    flex: 0 0 auto;
+}
+
+/* Wrapper da lista */
+.categoria-lista-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Lista horizontal */
+.categoria-lista {
+    display: flex;
+    gap: 20px;
+    padding: 16px 8px 22px 8px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 126, 175, 0.062);
+    color: #001c36;
+    font-size: 26px;
+    cursor: pointer;
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 0 10px rgba(212, 175, 55, 0.35),
+        inset 0 0 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Hover apenas visual, sem mudar tamanho */
+.scroll-btn:hover {
+    background: rgba(111, 185, 254, 0.22);
+    box-shadow:
+        0 0 10px rgba(212, 175, 55, 0.35),
+        inset 0 0 6px rgba(0, 0, 0, 0.6);
+    transform: translateY(-50%) scale(1.12);
+}
+
+/* Clique */
+.scroll-btn:active {
+    transform: translateY(-50%) scale(0.95);
+    box-shadow:
+        0 6px 14px rgba(111, 185, 254, 0.35);
+}
+
+
+.scroll-btn.esquerda {
+    left: 30px;
+}
+
+.scroll-btn.direita {
+    right: 70px;
+}
+
+/* ===== LISTA FINAL LIMPA ===== */
+.categoria-lista-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.categoria-lista {
+    display: flex;
+    gap: 20px;
+    padding: 16px 8px;
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Impede cards de encolher */
+.categoria-lista>* {
+    flex: 0 0 auto;
+}

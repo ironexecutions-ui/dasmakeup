@@ -1,0 +1,369 @@
+/* ===============================
+   OVERLAY
+=============================== */
+.mp-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 20, 40, 0.014);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+/* ===============================
+   MODAL BOX
+=============================== */
+.mp-box {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 28px 30px 26px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+    animation: mpEntrada 0.35s ease;
+}
+
+/* Scroll elegante */
+.mp-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.mp-box::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+/* ===============================
+   ANIMAÇÃO
+=============================== */
+@keyframes mpEntrada {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ===============================
+   TÍTULO
+=============================== */
+.mp-titulo {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 22px;
+    color: #0f172a;
+    position: relative;
+}
+
+.mp-titulo::after {
+    content: "";
+    display: block;
+    width: 46px;
+    height: 4px;
+    margin-top: 8px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #6fb9fe, #4fa3f7);
+}
+
+/* ===============================
+   BOTÃO FECHAR
+=============================== */
+.mp-btn-fechar {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: none;
+    background: #f1f5f9;
+    color: #334155;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.mp-btn-fechar:hover {
+    background: #e2e8f0;
+    transform: rotate(90deg);
+}
+
+/* ===============================
+   LINHAS DE CAMPO
+=============================== */
+.mp-campo-linha {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.mp-campo-linha strong {
+    min-width: 90px;
+    font-size: 14px;
+    color: #475569;
+}
+
+.mp-campo-linha span {
+    flex: 1;
+    font-size: 15px;
+    color: #0f172a;
+}
+
+/* ===============================
+   INPUTS
+=============================== */
+.mp-campo-linha input,
+.mp-endereco-form input,
+.mp-endereco-form select {
+    flex: 1;
+    padding: 9px 12px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    font-size: 14px;
+    background: #ffffff;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mp-campo-linha input:focus,
+.mp-endereco-form input:focus,
+.mp-endereco-form select:focus {
+    outline: none;
+    border-color: #6fb9fe;
+    box-shadow: 0 0 0 3px rgba(111, 185, 254, 0.25);
+}
+
+/* ===============================
+   BOTÕES EDITAR / SALVAR
+=============================== */
+.mp-editar {
+    background: transparent;
+    border: none;
+    font-size: 13px;
+    font-weight: 600;
+    color: #2563eb;
+    cursor: pointer;
+}
+
+.mp-editar:hover {
+    text-decoration: underline;
+}
+
+.mp-salvar {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(135deg, #6fb9fe, #4fa3f7);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mp-salvar:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(79, 163, 247, 0.4);
+}
+
+/* ===============================
+   BOTÕES GRANDES
+=============================== */
+.mp-btn-painel,
+.mp-btn-endereco,
+.mp-btn-logout {
+    width: 100%;
+    margin-top: 18px;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mp-btn-painel {
+    background: #0f172a;
+    color: #ffffff;
+}
+
+.mp-btn-painel:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.4);
+}
+
+.mp-btn-endereco {
+    background: #f8fafc;
+    color: #0f172a;
+    border: 1px solid #cbd5e1;
+}
+
+.mp-btn-endereco:hover {
+    background: #eef2f7;
+}
+
+.mp-btn-logout {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.mp-btn-logout:hover {
+    box-shadow: 0 10px 25px rgba(185, 28, 28, 0.25);
+}
+
+/* ===============================
+   FORM ENDEREÇO
+=============================== */
+.mp-endereco-form {
+    margin-top: 16px;
+    padding: 16px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mp-endereco-form label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+}
+
+/* ===============================
+   TELAS GRANDES (MONITORES)
+=============================== */
+@media (min-width: 1200px) {
+    .mp-box {
+        max-width: 560px;
+    }
+}
+
+/* ===============================
+   NOTEBOOKS / TABLETS GRANDES
+=============================== */
+@media (max-width: 1024px) {
+    .mp-box {
+        max-width: 92%;
+    }
+}
+
+/* ===============================
+   TABLETS
+=============================== */
+@media (max-width: 768px) {
+    .mp-box {
+        max-width: 94%;
+        padding: 24px 22px;
+    }
+
+    .mp-titulo {
+        font-size: 20px;
+    }
+
+    .mp-campo-linha {
+        gap: 8px;
+    }
+
+    .mp-campo-linha strong {
+        min-width: 80px;
+        font-size: 13px;
+    }
+
+    .mp-btn-painel,
+    .mp-btn-endereco,
+    .mp-btn-logout {
+        font-size: 14px;
+        padding: 11px;
+    }
+}
+
+/* ===============================
+   CELULARES GRANDES
+=============================== */
+@media (max-width: 520px) {
+    .mp-box {
+        max-width: 96%;
+        padding: 20px 18px;
+        border-radius: 14px;
+    }
+
+    .mp-titulo {
+        font-size: 18px;
+    }
+
+    .mp-campo-linha {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .mp-campo-linha span,
+    .mp-campo-linha input {
+        width: 100%;
+    }
+
+    .mp-editar,
+    .mp-salvar {
+        align-self: flex-end;
+    }
+
+    .mp-btn-fechar {
+        top: 14px;
+        right: 14px;
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* ===============================
+   CELULARES PEQUENOS
+=============================== */
+@media (max-width: 380px) {
+    .mp-box {
+        padding: 18px 14px;
+    }
+
+    .mp-titulo {
+        font-size: 17px;
+    }
+
+    .mp-campo-linha strong {
+        font-size: 12px;
+    }
+
+    .mp-campo-linha span,
+    .mp-campo-linha input {
+        font-size: 13px;
+    }
+
+    .mp-btn-painel,
+    .mp-btn-endereco,
+    .mp-btn-logout {
+        font-size: 13px;
+        padding: 10px;
+    }
+}
+
+/* ===============================
+   ALTURA BAIXA (CELULAR DEITADO)
+=============================== */
+@media (max-height: 600px) {
+    .mp-box {
+        max-height: 92vh;
+        padding-bottom: 18px;
+    }
+}

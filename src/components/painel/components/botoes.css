@@ -1,0 +1,68 @@
+/* =========================
+   MENU LATERAL
+========================= */
+
+.botoes-lateral {
+    width: 220px;
+    background: #011d5a;
+
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 12px;
+    border-radius: 30px;
+    border-right: 1px solid rgba(212, 175, 55, 0.15);
+
+    box-shadow:
+        inset -1px 0 0 rgba(255, 255, 255, 0.03),
+        4px 0 14px rgba(0, 0, 0, 0.45);
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+.botoes-lateral button {
+    background: rgba(212, 175, 55, 0.12);
+    border: 1px solid rgba(2, 16, 97, 0.4);
+    color: #ececf0;
+
+    padding: 10px 12px;
+    border-radius: 8px;
+
+    cursor: pointer;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.15s ease,
+        border-color 0.25s ease;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.25),
+        0 3px 8px rgba(0, 0, 0, 0.45);
+}
+
+/* Hover */
+.botoes-lateral button:hover {
+    background: #01bfee;
+    color: #121721;
+
+    border-color: #000000;
+
+    box-shadow:
+        0 0 14px rgba(16, 14, 146, 0.55),
+        0 6px 16px rgba(0, 0, 0, 0.6);
+
+    transform: translateX(4px);
+}
+
+/* Clique */
+.botoes-lateral button:active {
+    transform: scale(0.96);
+}

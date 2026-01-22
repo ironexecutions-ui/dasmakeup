@@ -1,0 +1,165 @@
+/* =========================
+   HEADER PAINEL PREMIUM
+========================= */
+
+.hp-header {
+    background: linear-gradient(180deg, #121721, #0f141d);
+    padding: 14px 22px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.55),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.04);
+
+    backdrop-filter: blur(2px);
+}
+
+/* =========================
+   LINHA INTERNA
+========================= */
+
+.hp-user-line {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+
+    background: rgba(255, 255, 255, 0.02);
+    padding: 10px 12px;
+    border-radius: 10px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+        0 4px 12px rgba(0, 0, 0, 0.45);
+}
+
+/* =========================
+   NOME DO USUÁRIO
+========================= */
+
+.hp-user-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #f8f8f8;
+    margin-right: 18px;
+    white-space: nowrap;
+
+    text-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* =========================
+   BOTÕES DE CONTAGEM
+========================= */
+
+.hp-count {
+    background: rgba(6, 4, 107, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #d6d6d6;
+
+    font-size: 14.5px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 8px;
+
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.15s ease;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        0 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Número */
+.hp-count strong {
+    font-size: 13px;
+    font-weight: 700;
+    color: #b3b4f8;
+}
+
+/* Hover */
+.hp-count:hover {
+    background: rgba(55, 71, 212, 0.14);
+    border-color: rgba(5, 4, 114, 0.45);
+    color: #ffffff;
+
+    box-shadow:
+        0 0 14px rgba(6, 15, 134, 0.45),
+        0 6px 14px rgba(0, 0, 0, 0.55);
+
+    transform: translateY(-1px);
+}
+
+/* Ativo */
+.hp-count.ativo {
+    background: linear-gradient(180deg, #05045e, #111731);
+    color: #fbfcff !important;
+    border-color: #141a70;
+
+    box-shadow:
+        0 0 16px rgba(4, 13, 99, 0.75),
+        0 6px 18px rgba(0, 0, 0, 0.6);
+
+    transform: translateY(-1px);
+}
+
+/* Clique */
+.hp-count:active {
+    transform: scale(0.95);
+}
+
+/* =========================
+   SKELETON PREMIUM
+========================= */
+
+.skeleton {
+    background: #1e2430;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.skeleton * {
+    color: transparent !important;
+    background: #1e2430 !important;
+    border-color: #1e2430 !important;
+}
+
+.skeleton::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -160px;
+    width: 160px;
+    height: 100%;
+
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.12),
+            transparent);
+
+    animation: skeleton-loading 1.2s ease-in-out infinite;
+}
+
+@keyframes skeleton-loading {
+    from {
+        left: -160px;
+    }
+
+    to {
+        left: 120%;
+    }
+}

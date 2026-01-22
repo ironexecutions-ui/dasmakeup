@@ -1,0 +1,89 @@
+.loading-global {
+    position: fixed;
+    inset: 0;
+    background: #0b0b0b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    font-family: Inter, system-ui, sans-serif;
+}
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    text-align: center;
+}
+
+.logo-float {
+    width: 106px;
+    height: 106px;
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 50%;
+    object-fit: cover;
+    animation: float 3.5s ease-in-out infinite;
+}
+
+.brand-name {
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    color: #fff;
+}
+
+.progress-line {
+    width: 140px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.12);
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.progress-line span {
+    display: block;
+    width: 40%;
+    height: 100%;
+    background: #fff;
+    animation: slide 1.2s ease-in-out infinite;
+}
+
+.loading-message {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.65);
+    letter-spacing: 0.3px;
+    min-height: 16px;
+    transition: opacity 0.3s ease;
+}
+
+/* ANIMAÇÕES MODERNAS */
+
+@keyframes slide {
+    0% {
+        transform: translateX(-120%);
+    }
+
+    50% {
+        transform: translateX(120%);
+    }
+
+    100% {
+        transform: translateX(120%);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,92 @@
+/* ===============================
+   BASE DO CORPO
+=============================== */
+.corpo-box {
+    background: #ffffff;
+    width: 99% !important;
+    border-radius: 50px;
+    color: #000000;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ===============================
+   SEPARAÇÃO VISUAL
+=============================== */
+.corpo-box::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.06);
+    margin-bottom: 30px;
+}
+
+/* ===============================
+   CONTROLE DE MODAIS
+=============================== */
+.modal-area {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===============================
+   OVERLAY PADRÃO
+=============================== */
+.modal-area::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(3px);
+}
+
+/* ===============================
+   AJUSTE DE SCROLL QUANDO MODAL ABERTO
+=============================== */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* ===============================
+   AJUSTE GERAL DE TEXTO
+=============================== */
+h1,
+h2,
+h3,
+h4 {
+    color: #000000;
+}
+
+/* ===============================
+   TRANSIÇÕES SUAVES
+=============================== */
+* {
+    box-sizing: border-box;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* ===============================
+   AJUSTE PARA MODAL PRODUTO
+   (sem interferir no layout interno)
+=============================== */
+.modal-produto,
+.modal-filtro {
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* ===============================
+   DESTAQUE AZUL SUTIL
+=============================== */
+.corpo-box strong {
+    color: #6fb9fe;
+}

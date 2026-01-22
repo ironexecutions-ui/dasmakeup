@@ -1,0 +1,271 @@
+/* ===============================
+   BASE
+=============================== */
+
+.avaliacao-painel {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 24px;
+    width: 90%;
+    border-radius: 30px;
+    background-color: #ffffff;
+    color: #1f2933;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+    height: calc(100vh - 120px);
+    overflow-y: auto;
+}
+
+/* ===============================
+   SCROLLBAR PERSONALIZADA
+=============================== */
+
+/* Chrome, Edge, Safari */
+.avaliacao-painel::-webkit-scrollbar {
+    width: 10px;
+}
+
+.avaliacao-painel::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 8px 0;
+}
+
+.avaliacao-painel::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg,
+            #fbbf24,
+            #f59e0b,
+            #d97706);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+.avaliacao-painel::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg,
+            #fde68a,
+            #fbbf24,
+            #f59e0b);
+}
+
+/* Firefox */
+.avaliacao-painel {
+    scrollbar-width: thin;
+    scrollbar-color: #f59e0b transparent;
+}
+
+/* ===============================
+   RESUMO
+=============================== */
+
+.avaliacao-resumo {
+    background:
+        radial-gradient(circle at top, #161d2c 0%, #0c1019 55%, #070a11 100%);
+    border-radius: 12px;
+    color: #e9ecf1;
+    border: #070a11 solid 2px;
+    padding: 20px 24px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.avaliacao-resumo h2 {
+    color: #e9ecf1;
+
+    font-weight: 600;
+}
+
+.avaliacao-resumo p {
+    margin: 6px 0;
+    font-size: 15px;
+    color: #e9ecf1;
+}
+
+/* ===============================
+   RANKING
+=============================== */
+
+.avaliacao-ranking {
+    background:
+        radial-gradient(circle at top, #161d2c 0%, #0c1019 55%, #070a11 100%);
+    border-radius: 12px;
+    padding: 20px 24px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.avaliacao-ranking h2 {
+    margin: 0 0 16px 0;
+    font-size: 20px;
+    color: #e9ecf1;
+
+    font-weight: 600;
+}
+
+.ranking-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e7eb;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.ranking-item:hover {
+    transform: translateX(4px);
+}
+
+.ranking-item:last-child {
+    border-bottom: none;
+}
+
+.ranking-item img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #e5e7eb;
+}
+
+.ranking-item strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #e9ecf1;
+
+    margin-bottom: 4px;
+}
+
+.ranking-item p {
+    margin: 0;
+    font-size: 14px;
+    color: #f1f1f1;
+}
+
+/* ===============================
+   LISTA DE AVALIAÇÕES
+=============================== */
+
+.avaliacao-lista {
+    background:
+        radial-gradient(circle at top, #161d2c 0%, #0c1019 55%, #070a11 100%);
+    border-radius: 12px;
+    padding: 20px 24px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.avaliacao-lista h2 {
+    margin: 0 0 16px 0;
+    font-size: 20px;
+    color: #e9ecf1;
+
+    font-weight: 600;
+}
+
+.avaliacao-item {
+    display: flex;
+    gap: 16px;
+    padding: 16px 0;
+    color: #e9ecf1;
+
+    border-bottom: 1px solid #e5e7eb;
+    transition: background 0.2s ease;
+}
+
+.avaliacao-item:last-child {
+    border-bottom: none;
+}
+
+.avaliacao-item img {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #e5e7eb;
+}
+
+.avaliacao-item strong {
+    display: block;
+    font-size: 15px;
+    color: #e9ecf1;
+
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.avaliacao-item p {
+    margin: 4px 0;
+
+    font-size: 14px;
+    color: #e9ecf1;
+}
+
+/* ===============================
+   ESTRELAS
+=============================== */
+
+.estrelas {
+    font-size: 16px;
+    color: #f59e0b;
+    letter-spacing: 1px;
+    margin: 4px 0;
+}
+
+/* ===============================
+   COMENTÁRIO
+=============================== */
+
+.comentario {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #4b5563;
+    background: #000000;
+    padding: 8px 10px;
+    border-radius: 16px;
+}
+
+/* ===============================
+   SCROLL GLOBAL PERSONALIZADO
+=============================== */
+
+.avaliacao-painel::-webkit-scrollbar {
+    width: 10px;
+}
+
+.avaliacao-painel::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.avaliacao-painel::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg,
+            #d1d5db,
+            #9ca3af);
+    border-radius: 10px;
+}
+
+.avaliacao-painel::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg,
+            #9ca3af,
+            #6b7280);
+}
+
+/* ===============================
+   RESPONSIVO
+=============================== */
+
+@media (max-width: 768px) {
+    .avaliacao-painel {
+        padding: 16px;
+    }
+
+    .ranking-item,
+    .avaliacao-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .ranking-item img,
+    .avaliacao-item img {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+    }
+}

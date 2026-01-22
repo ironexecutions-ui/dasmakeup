@@ -1,0 +1,310 @@
+/* ===============================
+   CAIXA GERAL DO PRODUTO
+=============================== */
+.carrinho-produto-box {
+    background: linear-gradient(180deg,
+            #00226b 0%,
+            #00216e 100%);
+    color: #ffffff;
+    width: 95%;
+    padding: 16px;
+    border-radius: 14px;
+    overflow: hidden !important;
+    height: fit-content;
+
+    box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    animation: fadeIn 0.3s ease;
+    margin-bottom: 90px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+/* ===============================
+   BOTÃO FECHAR
+=============================== */
+.carrinho-prod-fechar {
+    background: linear-gradient(180deg,
+            #e6c45a 0%,
+            #d4af37 100%);
+    color: #1e2430;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-bottom: 18px;
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+
+    box-shadow:
+        0 4px 10px rgba(212, 175, 55, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+.carrinho-prod-fechar:hover {
+    background: linear-gradient(180deg,
+            #f0d470 0%,
+            #e6c45a 100%);
+    transform: translateY(-2px);
+    box-shadow:
+        0 8px 18px rgba(212, 175, 55, 0.45);
+}
+
+/* ===============================
+   MINI GALERIA
+=============================== */
+.carrinho-prod-imgs {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 14px;
+}
+
+.carrinho-prod-img {
+    width: 112px;
+    height: 112px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    object-fit: cover;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* ===============================
+   NOME E PREÇO
+=============================== */
+.carrinho-prod-nome {
+    font-size: 22.5px;
+    margin-top: 14px;
+    color: #ffffff;
+    margin-bottom: 6px;
+    letter-spacing: 0.4px;
+}
+
+.carrinho-prod-preco {
+    font-size: 19.5px;
+    color: #ffffff;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+/* ===============================
+   DESCRIÇÃO
+=============================== */
+.carrinho-prod-desc {
+    font-size: 15.5px;
+    color: #dcdcdc;
+    line-height: 1.55;
+    margin-bottom: 16px;
+}
+
+/* ===============================
+   CARACTERÍSTICAS
+=============================== */
+.carrinho-prod-caracts {
+    padding-left: 18px;
+    font-size: 15px;
+    margin-bottom: 22px;
+}
+
+.carrinho-prod-caracts li {
+    margin-bottom: 6px;
+    color: #cfcfcf;
+}
+
+/* ===============================
+   ÁREA DE QUANTIDADE
+=============================== */
+.quantidade-box2 {
+    background: linear-gradient(180deg,
+            #111722 0%,
+            #0e121a 100%);
+    padding: 16px;
+    border-radius: 10px;
+    margin-top: 12px;
+    border: 1px solid #96a6ff;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+        0 4px 12px rgba(0, 0, 0, 0.45);
+}
+
+.quantidade-box2 h3 {
+    font-size: 17.5px;
+    margin-bottom: 12px;
+    color: #fffffffb;
+    letter-spacing: 0.4px;
+}
+
+/* ===============================
+   TOTAL DO PRODUTO
+=============================== */
+.total-preco2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fafafa;
+    margin-top: 6px;
+}
+
+/* ===============================
+   ANIMAÇÃO
+=============================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ajuste final */
+.carrinho-produto-box {
+    width: 90%;
+}
+
+.carrinho-prod-caracts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.caract-btn {
+    position: relative;
+    overflow: hidden;
+
+    padding: 7px 16px;
+    border-radius: 999px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    background:
+        linear-gradient(135deg,
+            rgba(255, 255, 255, 0.06) 0%,
+            rgba(255, 255, 255, 0.02) 40%,
+            rgba(0, 0, 0, 0.15) 100%);
+
+    color: #ffffff;
+    font-size: 13.5px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+
+    cursor: pointer;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        0 4px 10px rgba(0, 0, 0, 0.45);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        border-color 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.caract-btn::before {
+    content: "";
+    position: absolute;
+    inset: -40%;
+
+    background: linear-gradient(135deg,
+            transparent 40%,
+            rgba(255, 255, 255, 0.18) 50%,
+            transparent 60%);
+
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+}
+
+.caract-btn:hover::before {
+    transform: translateX(100%);
+}
+
+.caract-btn:hover {
+    border-color: rgba(255, 255, 255, 0.45);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        0 6px 14px rgba(0, 0, 0, 0.55);
+
+    transform: translateY(-1px);
+}
+
+.caract-btn.ativa {
+    background:
+        linear-gradient(135deg,
+            #f0d470 0%,
+            #d4af37 60%,
+            #b8962e 100%);
+
+    color: #1a1f2b;
+    font-weight: 700;
+
+    border-color: #d4af37;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.45),
+        0 8px 18px rgba(212, 175, 55, 0.45);
+}
+
+.caract-btn.ativa::before {
+    background: linear-gradient(135deg,
+            transparent 45%,
+            rgba(255, 255, 255, 0.35) 50%,
+            transparent 55%);
+}
+
+.caract-btn:focus-visible {
+    outline: none;
+    box-shadow:
+        0 0 0 2px rgba(212, 175, 55, 0.6),
+        0 8px 18px rgba(0, 0, 0, 0.6);
+}
+
+
+.caract-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.caract-btn.ativa {
+    background: #ffffff;
+    color: #000;
+    font-weight: 600;
+}
+
+.rrrr {
+    margin-top: 14px;
+    margin-bottom: 18px;
+    padding: 14px 16px;
+
+    border-radius: 14px;
+
+    background: linear-gradient(180deg,
+            #141a26 0%,
+            #101520 100%);
+
+    border: 3px solid rgba(250, 250, 252, 0.35) !important;
+
+    box-shadow:
+        0 6px 16px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+    animation: fadeIn 0.25s ease;
+
+    position: relative;
+}

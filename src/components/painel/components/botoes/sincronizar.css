@@ -1,0 +1,111 @@
+/* ===============================
+   CONTAINER
+=============================== */
+.sincronizar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    padding: 20px;
+    width: 95%;
+    background: linear-gradient(135deg, #0f172a, #020617);
+    border-radius: 12px;
+}
+
+/* ===============================
+   BOTÃO BASE
+=============================== */
+.sincronizar-btn {
+    min-width: 260px;
+    padding: 14px 22px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.2s ease;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+}
+
+/* ===============================
+   HOVER
+=============================== */
+.sincronizar-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 30px rgba(37, 99, 235, 0.5);
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+/* ===============================
+   CLICK
+=============================== */
+.sincronizar-btn:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+/* ===============================
+   DESABILITADO / ENVIANDO
+=============================== */
+.sincronizar-btn:disabled {
+    background: linear-gradient(135deg, #475569, #334155);
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* ===============================
+   ESTADOS VISUAIS
+=============================== */
+.sincronizar-btn.ok {
+    background: linear-gradient(135deg, #16a34a, #15803d);
+    box-shadow: 0 10px 25px rgba(22, 163, 74, 0.4);
+}
+
+.sincronizar-btn.erro {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    box-shadow: 0 10px 25px rgba(220, 38, 38, 0.4);
+}
+
+/* ===============================
+   ANIMAÇÃO DE ENVIO
+=============================== */
+.sincronizar-btn.enviando {
+    position: relative;
+    overflow: hidden;
+}
+
+.sincronizar-btn.enviando::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.15),
+            transparent);
+    animation: loading 1.2s infinite;
+}
+
+@keyframes loading {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* ===============================
+   RESPONSIVO
+=============================== */
+@media (max-width: 480px) {
+    .sincronizar-btn {
+        width: 100%;
+        font-size: 15px;
+        padding: 14px;
+    }
+}

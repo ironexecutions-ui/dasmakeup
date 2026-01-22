@@ -1,0 +1,327 @@
+/* ===============================
+   CONTAINER GERAL
+=============================== */
+.pagamento-container {
+    width: 520px !important;
+    max-width: 90% !important;
+    margin: 40px auto;
+    padding: 28px;
+    background: #ffffff;
+    border-top-left-radius: 14px !important;
+    border-end-start-radius: 14px !important;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #1f2937;
+}
+
+.pagamento-resumo {
+    background: #f8f8f8;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.pagamento-resumo div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.pagamento-resumo .total {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    margin-top: 10px;
+    font-size: 17px;
+}
+
+.pagamento-resumo strong {
+    color: #111;
+}
+
+.pagamento-status {
+    margin: 15px 0;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.pagamento-status.approved {
+    background: #e6f9ee;
+    color: #1a7f37;
+}
+
+.pagamento-status.error {
+    background: #fdecea;
+    color: #b42318;
+}
+
+/* ===============================
+   TABS PIX / CARTÃO
+=============================== */
+.pagamento-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.pagamento-tabs button {
+    flex: 1;
+    padding: 14px 0;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+    font-size: 15px;
+    font-weight: 600;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.pagamento-tabs button:hover {
+    background: #f3f4f6;
+}
+
+.pagamento-tabs button.ativo {
+    background: #111827;
+    color: #ffffff;
+    border-color: #111827;
+}
+
+/* ===============================
+   PIX
+=============================== */
+.pagamento-pix {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-top: 10px;
+}
+
+.pagamento-pix img {
+    width: 240px;
+    height: 240px;
+    padding: 12px;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.pagamento-pix button {
+    width: 100%;
+    padding: 13px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pagamento-pix button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.35);
+}
+
+.pagamento-pix p {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* ===============================
+   CARTÃO
+=============================== */
+.pagamento-cartao {
+    margin-top: 8px;
+    padding: 18px;
+    border-radius: 12px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+}
+
+/* Mercado Pago SDK herda bem aqui */
+.pagamento-cartao button {
+    width: 100%;
+    margin-top: 14px;
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pagamento-cartao button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+}
+
+/* ===============================
+   ERRO
+=============================== */
+.erro {
+    margin-top: 18px;
+    padding: 12px 14px;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+    color: #b91c1c;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* ===============================
+   BOTÃO VOLTAR
+=============================== */
+.pagamento-container>button {
+    width: 100%;
+    margin-top: 22px;
+    padding: 13px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    color: #374151;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.pagamento-container>button:hover {
+    background: #f3f4f6;
+}
+
+/* ===============================
+   RESPONSIVO COMPLETO
+=============================== */
+
+/* ===============================
+   ATÉ 1024px (notebooks menores)
+=============================== */
+@media (max-width: 1024px) {
+    .pagamento-container {
+        margin: 24px auto;
+        padding: 24px;
+    }
+
+    .pagamento-pix img {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+/* ===============================
+   ATÉ 768px (tablets)
+=============================== */
+@media (max-width: 768px) {
+    .pagamento-container {
+        max-width: 94%;
+        margin: 20px auto;
+        padding: 22px;
+    }
+
+    .pagamento-tabs {
+        gap: 8px;
+    }
+
+    .pagamento-tabs button {
+        padding: 12px 0;
+        font-size: 14px;
+    }
+
+    .pagamento-pix img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .pagamento-pix button {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .pagamento-cartao {
+        padding: 16px;
+    }
+}
+
+/* ===============================
+   ATÉ 480px (celulares)
+=============================== */
+@media (max-width: 480px) {
+    .pagamento-container {
+        max-width: 100%;
+        margin: 0;
+        padding: 18px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .pagamento-tabs {
+        flex-direction: column;
+    }
+
+    .pagamento-tabs button {
+        width: 100%;
+        padding: 14px;
+        font-size: 15px;
+    }
+
+    .pagamento-pix {
+        gap: 12px;
+    }
+
+    .pagamento-pix img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .pagamento-pix p {
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .pagamento-cartao {
+        padding: 14px;
+    }
+
+    .erro {
+        font-size: 13px;
+    }
+
+    .pagamento-container>button {
+        font-size: 14px;
+        padding: 14px;
+    }
+}
+
+/* ===============================
+   ATÉ 360px (celulares muito pequenos)
+=============================== */
+@media (max-width: 360px) {
+    .pagamento-container {
+        padding: 16px;
+    }
+
+    .pagamento-pix img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .pagamento-tabs button {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .pagamento-pix button {
+        font-size: 14px;
+        padding: 12px;
+    }
+}

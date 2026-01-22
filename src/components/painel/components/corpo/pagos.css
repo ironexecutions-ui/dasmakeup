@@ -1,0 +1,359 @@
+/* ===============================
+   Container principal
+================================*/
+
+.pp-corpo-painel {
+    padding: 20px;
+    color: white;
+    width: 70%;
+    font-family: "Montserrat", sans-serif;
+    overflow: auto;
+}
+
+/* ================================
+   SCROLLBAR DOURADA PERSONALIZADA
+================================ */
+
+.pp-corpo-painel::-webkit-scrollbar {
+    width: 10px;
+}
+
+.pp-corpo-painel::-webkit-scrollbar-track {
+    background: #121721;
+    border-radius: 10px;
+}
+
+.pp-corpo-painel::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg,
+            #f5e08e,
+            #d4af37,
+            #b8962e);
+    border-radius: 10px;
+    border: 2px solid #121721;
+}
+
+.pp-corpo-painel::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg,
+            #fff2b0,
+            #e6c558,
+            #caa437);
+}
+
+/* ================================
+   FIREFOX
+================================ */
+
+.pp-corpo-painel {
+    scrollbar-width: thin;
+    scrollbar-color: #d4af37 #121721;
+}
+
+.pp-corpo-painel h2 {
+    font-size: 26px;
+    margin-bottom: 25px;
+    font-weight: 700;
+    color: #d4af37;
+}
+
+/* ===============================
+   Cartões das vendas
+================================*/
+
+.pp-venda-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    padding: 18px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+    transition: transform .25s;
+}
+
+.pp-venda-card:hover {
+    transform: scale(1.02);
+}
+
+.pp-venda-card h3 {
+    margin-bottom: 10px;
+    color: #d4af37;
+}
+
+/* ===============================
+   Lista de produtos
+================================*/
+
+.pp-produtos-lista {
+    margin-top: 15px;
+}
+
+.pp-produto-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.pp-produto-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* ===============================
+   Total
+================================*/
+
+.pp-total-geral {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #f2d788;
+}
+
+/* ===============================
+   Botão abrir comanda
+================================*/
+
+.pp-btn-comanda {
+    margin-top: 15px;
+    padding: 10px 16px;
+    background: #d4af37;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all .25s;
+}
+
+.pp-btn-comanda:hover {
+    background: #f2d788;
+}
+
+/* ===============================
+   Overlay da comanda
+================================*/
+
+.pp-comanda-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.70);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+/* ===============================
+   Caixa da comanda
+================================*/
+
+.pp-comanda-box {
+    width: 95%;
+    max-width: 520px;
+    background: #121721;
+    color: white;
+    max-height: 70%;
+    overflow: auto;
+
+    padding: 25px;
+    border-radius: 14px;
+    position: relative;
+    border: 3px solid rgba(232, 233, 250, 0.25);
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.55);
+    animation: aparecer .25s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===============================
+   Botão fechar
+================================*/
+
+.pp-btn-fechar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 12px;
+    cursor: pointer;
+    background: rgba(3, 46, 110, 0.15);
+    border: 1px solid rgba(36, 173, 8, 0.35);
+    color: #89dbd4;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: .25s;
+}
+
+.pp-btn-fechar:hover {
+    background: #072070;
+    color: #121721;
+}
+
+/* ===============================
+   Produtos da comanda
+================================*/
+
+.pp-comanda-produtos {
+    margin-top: 15px;
+}
+
+/* ===============================
+   Informações do cliente na lista
+================================*/
+
+.pp-cliente-info {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    font-size: 14px;
+    color: #e0e0e0;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 10px;
+    border-radius: 8px;
+    border-left: 3px solid #d4af37;
+}
+
+/* ===============================
+   Informações do cliente na comanda
+================================*/
+
+.pp-cliente-comanda {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 3px solid #0141f1;
+    line-height: 1.5;
+}
+
+.pp-cliente-comanda p {
+    margin: 5px 0;
+    font-size: 15px;
+}
+
+/* ===============================
+   QR Code estilizado
+================================*/
+
+.pp-qr-img {
+    width: 200px;
+    height: 200px;
+    background: white;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(53, 53, 53, 0.3);
+    margin-top: 10px;
+}
+
+/* Ajuste opcional para centralizar */
+.pp-qr-area {
+    text-align: center;
+}
+
+.pp-comanda-item {
+    background: #1b212e;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(19, 17, 13, 0.2);
+}
+
+.pp-comanda-total {
+    font-size: 22px;
+    margin-top: 18px;
+    color: #fcfcfc;
+}
+
+.pp-comanda-frete {
+    font-size: 17px;
+    margin-top: 10px;
+    color: #ececec;
+}
+
+/* ===============================
+   QR Code
+================================*/
+
+.pp-qr-area {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.pp-qr-link {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #f5deb3;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* ===============================
+   Botão confirmar
+================================*/
+
+.pp-btn-confirmar {
+    width: 95%;
+    margin-top: 25px;
+    padding: 12px;
+    background: #00026e;
+    color: #ffffff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
+    border: none;
+    transition: .25s;
+}
+
+.pp-btn-confirmar:hover {
+    background: #03157a27;
+    border: #89dbd4 solid 1px;
+}
+
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .comanda {
+        width: 58mm;
+        font-family: monospace;
+        font-size: 12px;
+    }
+
+    img,
+    canvas {
+        max-width: 95%;
+    }
+}
+
+.pp-comanda-tipo {
+    margin: 8px auto 12px auto;
+    padding: 6px 16px;
+    width: fit-content;
+    border-radius: 16px;
+    font-weight: bold;
+    font-size: 13px;
+    background: #222;
+    color: #fff;
+}

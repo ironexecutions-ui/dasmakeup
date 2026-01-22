@@ -1,0 +1,108 @@
+body {
+  background-color: #6fb9fe;
+}
+
+
+/* ===============================
+   BASE FLUIDA GLOBAL
+=============================== */
+
+#layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* área central que troca conteúdo */
+.conteudo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1500px !important;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* garante que modais ocupem bem a tela */
+.conteudo>* {
+  width: 95%;
+}
+
+/* ===============================
+   ATÉ 1200px
+=============================== */
+@media (max-width: 1200px) {
+
+  .conteudo {
+    max-width: 95%;
+    padding: 14px;
+  }
+}
+
+/* ===============================
+   ATÉ 900px
+=============================== */
+@media (max-width: 900px) {
+
+  #layout {
+    overflow-x: hidden;
+  }
+
+  .conteudo {
+    padding: 12px;
+  }
+}
+
+/* ===============================
+   ATÉ 700px
+=============================== */
+@media (max-width: 700px) {
+
+  .conteudo {
+    padding: 10px;
+  }
+}
+
+/* ===============================
+   ATÉ 500px
+=============================== */
+@media (max-width: 500px) {
+
+  #layout {
+    min-height: 100dvh;
+  }
+
+  .conteudo {
+    padding: 8px;
+  }
+}
+
+/* ===============================
+   MOBILE MUITO PEQUENO
+=============================== */
+@media (max-width: 380px) {
+
+  .conteudo {
+    padding: 6px;
+  }
+}
+
+/* ===============================
+   TELAS GRANDES
+=============================== */
+@media (min-width: 1600px) {
+
+  .conteudo {
+    max-width: 1500px;
+  }
+}
+
+.barra-principal {
+  transition: transform 0.3s ease;
+}
+
+body.modal-produto-aberto .barra-principal {
+  transform: translateY(10px);
+}

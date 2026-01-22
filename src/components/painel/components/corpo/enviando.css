@@ -1,0 +1,423 @@
+/* =====================================================
+   PAINEL PRINCIPAL
+===================================================== */
+.env-corpo-painel {
+    width: 70%;
+    padding: 34px;
+    background: linear-gradient(180deg, #121826 0%, #0e131c 100%);
+    color: #ffffff;
+    overflow: auto;
+
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    box-shadow:
+        0 28px 60px rgba(0, 0, 0, 0.7),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    animation: envFadeIn 0.35s ease;
+}
+
+@keyframes envFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.env-corpo-painel h2 {
+    margin-bottom: 22px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #bed7e6;
+    line-height: 1.4;
+    letter-spacing: 0.3px;
+}
+
+/* =====================================================
+   INPUT PADRÃO
+===================================================== */
+.env-input-padrao {
+    width: 70%;
+    max-width: 70%;
+    padding: 14px 18px;
+    margin-top: 14px;
+    border-radius: 12px;
+    border: 1px solid #2f3545;
+    background: linear-gradient(180deg, #1a202c, #171d29);
+    color: transparent;
+    font-size: 14px;
+    outline: none;
+
+    transition: border 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.env-input-padrao::placeholder {
+    color: #8f95a9;
+}
+
+.env-input-padrao:focus {
+    border-color: #d4af37;
+    background: #1f2636;
+
+    box-shadow:
+        0 0 0 3px rgba(212, 175, 55, 0.18),
+        0 12px 26px rgba(0, 0, 0, 0.6);
+}
+
+/* =====================================================
+   TEXTAREA
+===================================================== */
+.env-textarea-padrao {
+    width: 70%;
+    min-height: 110px;
+    padding: 14px 18px;
+    margin-top: 14px;
+    border-radius: 12px;
+    border: 1px solid #2f3545;
+    background: linear-gradient(180deg, #1a202c, #171d29);
+    color: #ffffff;
+    font-size: 14px;
+    resize: vertical;
+    outline: none;
+
+    transition: border 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.env-textarea-padrao::placeholder {
+    color: #8f95a9;
+}
+
+.env-textarea-padrao:focus {
+    border-color: #d4af37;
+    background: #1f2636;
+
+    box-shadow:
+        0 0 0 3px rgba(212, 175, 55, 0.18),
+        0 12px 26px rgba(0, 0, 0, 0.6);
+}
+
+/* =====================================================
+   LISTA DE PRODUTOS PARA ENVIO
+===================================================== */
+.env-lista-produtos-envio {
+    margin-top: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.env-produto-envio {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    width: 70%;
+    background: linear-gradient(180deg, #1b2230, #161c28);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    padding: 16px 18px;
+
+    transition:
+        border 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.env-produto-envio:hover {
+    border-color: rgba(212, 175, 55, 0.45);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.7),
+        0 0 0 2px rgba(212, 175, 55, 0.12);
+
+    transform: translateY(-3px);
+}
+
+.env-produto-envio img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid #333a4d;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.env-produto-envio span {
+    font-size: 15px;
+    font-weight: 600;
+    color: #eef1f7;
+}
+
+/* =====================================================
+   BOTÃO PRINCIPAL
+===================================================== */
+.env-btn-acao {
+    width: 70%;
+    margin-top: 24px;
+    padding: 15px;
+    background: linear-gradient(180deg, #020e7a, #030e6b);
+    color: #ebebeb;
+    border: none;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+
+    box-shadow:
+        0 14px 32px rgba(3, 13, 146, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+.env-btn-acao:hover:not(:disabled) {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+    background: linear-gradient(180deg, #020e7a, #030e6b) !important;
+    color: aliceblue !important;
+}
+
+.env-btn-acao:disabled {
+    background: linear-gradient(180deg, #020e7a54, #030d6b3b);
+    color: #ffffff;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* =====================================================
+   CONFIRMAÇÃO SEM LINK
+===================================================== */
+.env-confirmacao-envio {
+    margin-top: 26px;
+    background: linear-gradient(180deg, #141a25, #0f141d);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 22px;
+    width: 70%;
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    box-shadow:
+        0 22px 48px rgba(0, 0, 0, 0.7);
+
+    animation: envConfirmIn 0.25s ease;
+}
+
+@keyframes envConfirmIn {
+    from {
+        opacity: 0;
+        transform: scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.env-confirmacao-envio p {
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 1.5;
+}
+
+.env-confirmacao-envio button {
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.env-confirmacao-envio button:first-child {
+    background: linear-gradient(180deg, #f1d77a, #d4af37);
+    color: #121721;
+}
+
+.env-confirmacao-envio button:first-child:hover {
+    transform: scale(1.05);
+}
+
+.env-confirmacao-envio button:last-child {
+    background: #2f3545;
+    color: #ffffff;
+}
+
+.env-confirmacao-envio button:last-child:hover {
+    background: #3b4154;
+}
+
+/* =====================================================
+   DESKTOP MÉDIO (até 1200px)
+===================================================== */
+@media (max-width: 1200px) {
+
+    .env-corpo-painel {
+        width: 85%;
+        padding: 30px;
+    }
+
+    .env-input-padrao,
+    .env-textarea-padrao,
+    .env-produto-envio,
+    .env-btn-acao,
+    .env-confirmacao-envio {
+        width: 85%;
+    }
+
+    .env-produto-envio span {
+        font-size: 15px;
+    }
+}
+
+/* =====================================================
+   TABLET (até 900px)
+===================================================== */
+@media (max-width: 900px) {
+
+    .env-corpo-painel {
+        width: 95%;
+        padding: 26px;
+        border-radius: 14px;
+    }
+
+    .env-corpo-painel h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .env-input-padrao,
+    .env-textarea-padrao,
+    .env-produto-envio,
+    .env-btn-acao,
+    .env-confirmacao-envio {
+        width: 100%;
+    }
+
+    .env-produto-envio {
+        gap: 14px;
+        padding: 14px;
+    }
+
+    .env-produto-envio img {
+        width: 54px;
+        height: 54px;
+    }
+
+    .env-produto-envio span {
+        font-size: 14px;
+    }
+
+    .env-btn-acao {
+        padding: 14px;
+        font-size: 14px;
+    }
+}
+
+/* =====================================================
+   MOBILE (até 600px)
+===================================================== */
+@media (max-width: 600px) {
+
+    .env-corpo-painel {
+        width: 100%;
+        padding: 20px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .env-corpo-painel h2 {
+        font-size: 18px;
+        line-height: 1.3;
+    }
+
+    .env-input-padrao,
+    .env-textarea-padrao {
+        font-size: 15px;
+        padding: 16px;
+    }
+
+    .env-produto-envio {
+        flex-direction: row;
+        align-items: center;
+        padding: 12px;
+    }
+
+    .env-produto-envio img {
+        width: 48px;
+        height: 48px;
+        border-radius: 10px;
+    }
+
+    .env-produto-envio span {
+        font-size: 14px;
+    }
+
+    .env-btn-acao {
+        padding: 16px;
+        font-size: 15px;
+        border-radius: 12px;
+    }
+
+    .env-confirmacao-envio {
+        padding: 18px;
+        gap: 14px;
+    }
+
+    .env-confirmacao-envio p {
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .env-confirmacao-envio button {
+        padding: 14px;
+        font-size: 14px;
+    }
+}
+
+/* =====================================================
+   MOBILE PEQUENO (até 420px)
+===================================================== */
+@media (max-width: 420px) {
+
+    .env-corpo-painel {
+        padding: 16px;
+    }
+
+    .env-corpo-painel h2 {
+        font-size: 16px;
+    }
+
+    .env-produto-envio {
+        gap: 10px;
+    }
+
+    .env-produto-envio span {
+        font-size: 13px;
+    }
+
+    .env-input-padrao,
+    .env-textarea-padrao {
+        padding: 14px;
+        font-size: 14px;
+    }
+
+    .env-btn-acao {
+        font-size: 14px;
+        padding: 14px;
+    }
+}

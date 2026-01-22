@@ -1,0 +1,168 @@
+/* ===============================
+   CONTAINER PRINCIPAL
+=============================== */
+
+.ww-produto-box {
+    background: #111;
+    border-radius: 14px;
+    padding: 16px;
+    margin-top: 10px;
+    border: 1px solid #222;
+    animation: ww-aparecer 0.25s ease;
+}
+
+/* ===============================
+   BOTÃO FECHAR
+=============================== */
+
+.ww-btn-fechar {
+    background: transparent;
+    color: #aaa;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.ww-btn-fechar:hover {
+    color: #fff;
+}
+
+/* ===============================
+   IMAGENS
+=============================== */
+
+.ww-imagens {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    margin-bottom: 12px;
+}
+
+.ww-imagem-item {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #222;
+}
+
+/* ===============================
+   TEXTO DO PRODUTO
+=============================== */
+
+.ww-nome {
+    font-size: 16px;
+    margin-bottom: 4px;
+    color: #fff;
+}
+
+.ww-preco {
+    font-size: 14px;
+    color: #d4af37;
+    margin-bottom: 12px;
+}
+
+/* ===============================
+   AVALIAÇÃO
+=============================== */
+
+.ww-avaliacao-box {
+    margin-top: 10px;
+}
+
+.ww-avaliacao-titulo {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #ccc;
+}
+
+/* ===============================
+   ESTRELAS
+=============================== */
+
+.ww-estrelas {
+    display: flex;
+    gap: 6px;
+    font-size: 28px;
+    margin: 10px 0;
+}
+
+.ww-estrela {
+    cursor: pointer;
+    color: #555;
+    transition: color 0.2s ease, transform 0.15s ease;
+}
+
+.ww-estrela:hover {
+    transform: scale(1.1);
+}
+
+.ww-estrela.ww-ativa {
+    color: #d4af37;
+}
+
+/* hover progressivo usando :has */
+.ww-estrelas:has(.ww-estrela:nth-child(1):hover) .ww-estrela:nth-child(-n+1),
+.ww-estrelas:has(.ww-estrela:nth-child(2):hover) .ww-estrela:nth-child(-n+2),
+.ww-estrelas:has(.ww-estrela:nth-child(3):hover) .ww-estrela:nth-child(-n+3),
+.ww-estrelas:has(.ww-estrela:nth-child(4):hover) .ww-estrela:nth-child(-n+4),
+.ww-estrelas:has(.ww-estrela:nth-child(5):hover) .ww-estrela:nth-child(-n+5) {
+    color: #d4af37;
+}
+
+/* ===============================
+   TEXTAREA
+=============================== */
+
+.ww-textarea {
+    width: 97%;
+    padding: 10px;
+    border-radius: 8px;
+    resize: none;
+    margin-bottom: 12px;
+    background: #0b0b0b;
+    color: #fff;
+    border: 1px solid #222;
+}
+
+.ww-textarea:focus {
+    outline: none;
+    border-color: #d4af37;
+}
+
+/* ===============================
+   BOTÃO ENVIAR
+=============================== */
+
+.ww-btn-enviar {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: #d4af37;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.ww-btn-enviar:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ===============================
+   ANIMAÇÃO
+=============================== */
+
+@keyframes ww-aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
