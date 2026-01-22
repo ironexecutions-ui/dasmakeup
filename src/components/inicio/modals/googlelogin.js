@@ -4,7 +4,7 @@ export function iniciarGoogleLogin(callback) {
     /* global googleffv */
 
     google.accounts.id.initialize({
-        client_id: "337060969671-nlu45p6fa9u6ct098brd8p478kv1ss1q.apps.googleusercontent.com",
+        client_id: "337060969671-1s05i8dgi6bgilr7t2la0pq8vbnkimfa.apps.googleusercontent.com",
         callback: async (response) => {
             const credential = response.credential;
 
