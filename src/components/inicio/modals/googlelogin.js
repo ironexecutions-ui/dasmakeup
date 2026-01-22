@@ -4,7 +4,7 @@ export function iniciarGoogleLogin(callback) {
     /* global google */
 
     google.accounts.id.initialize({
-        client_id: "337060969671-3livqf5rgsiv1oq3q3qjbbb2c8gve741.apps.googleusercontent.com",
+        client_id: "992388111982-vbqmvlkoqh7u1mq4t6a83a944g1m15pa.apps.googleusercontent.com",
         callback: async (response) => {
             const credential = response.credential;
 
