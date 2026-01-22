@@ -67,7 +67,10 @@ export default function ModalLogin({ fechar }) {
         const resp = await fetch(`${API_URL}/das/auth/google`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ credential: credencial })
+            body: JSON.stringify({
+                credential: credencial,
+                aceitar_termos: true
+            })
         });
 
         const json = await resp.json();
