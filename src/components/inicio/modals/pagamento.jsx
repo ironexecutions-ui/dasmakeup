@@ -2,7 +2,15 @@ import React, { useEffect, useState } from "react";
 import { API_URL } from "../../../config";
 import "./pagamento.css";
 import { initMercadoPago, CardPayment } from "@mercadopago/sdk-react";
-initMercadoPago(import.meta.env.VITE_MP_PUBLIC_KEY);
+
+/* =====================================================
+   COLE A PUBLIC KEY REAL DO MERCADO PAGO AQUI
+   (Public key do painel, NÃO access token)
+===================================================== */
+initMercadoPago(
+    "APP_USR-dda13e16-91e3-4e37-bf90-98e2e8f599d1",
+    { locale: "pt-BR" }
+);
 
 export default function PagamentoCheckout({ enviadoId, total, usuario, voltar }) {
 
@@ -15,6 +23,10 @@ export default function PagamentoCheckout({ enviadoId, total, usuario, voltar })
     const [gerandoPix, setGerandoPix] = useState(false);
     const [pixErroFatal, setPixErroFatal] = useState(false);
     const [resumo, setResumo] = useState(null);
+
+    // ===============================
+    // CARREGAR RESUMO (SUBTOTAL / FRETE / TOTAL)
+    // ===============================
     useEffect(() => {
         async function carregarResumo() {
             try {
@@ -49,36 +61,29 @@ export default function PagamentoCheckout({ enviadoId, total, usuario, voltar })
                         enviado_id: enviadoId,
                         email: usuario.email
                     })
-
                 });
 
                 const json = await r.json();
 
                 if (!r.ok) {
-                    if (json.motivo) {
-                        setErro(`${json.mensagem}: ${json.motivo}`);
-                    } else {
-                        setErro(json.mensagem || "Erro ao gerar PIX");
-                    }
+                    setErro(json.mensagem || "Erro ao gerar PIX");
                     setPixErroFatal(true);
                     setGerandoPix(false);
                     return;
-
                 }
 
                 setPix(json);
                 setGerandoPix(false);
 
-            } catch (e) {
+            } catch {
                 setErro("Erro de conexão com o servidor");
                 setPixErroFatal(true);
                 setGerandoPix(false);
-
             }
         }
 
         gerarPix();
-    }, [aba, pix, gerandoPix, enviadoId, total, usuario.email]);
+    }, [aba, pix, gerandoPix, pixErroFatal, enviadoId, usuario.email]);
 
     // ===============================
     // POLLING STATUS PAGAMENTO
@@ -87,7 +92,7 @@ export default function PagamentoCheckout({ enviadoId, total, usuario, voltar })
         const timer = setInterval(async () => {
             try {
                 const r = await fetch(
-                    `${API_URL}/pagamento/status/${enviadoId}`
+                    `${API_URL}/das/pagamento/status/${enviadoId}`
                 );
                 const json = await r.json();
 
@@ -103,14 +108,11 @@ export default function PagamentoCheckout({ enviadoId, total, usuario, voltar })
                     setMensagemStatus(json.mensagem || "Erro no pagamento");
                 }
 
-            } catch {
-                // erro silencioso para não poluir UX
-            }
+            } catch { }
         }, 5000);
 
         return () => clearInterval(timer);
     }, [enviadoId]);
-
 
     // ===============================
     // COPIAR PIX
@@ -136,7 +138,6 @@ export default function PagamentoCheckout({ enviadoId, total, usuario, voltar })
                     PIX
                 </button>
 
-
                 <button
                     className={aba === "cartao" ? "ativo" : ""}
                     onClick={() => setAba("cartao")}
@@ -150,9 +151,7 @@ export default function PagamentoCheckout({ enviadoId, total, usuario, voltar })
             =============================== */}
             {aba === "pix" && (
                 <>
-                    {gerandoPix && (
-                        <p>Gerando código PIX...</p>
-                    )}
+                    {gerandoPix && <p>Gerando código PIX...</p>}
 
                     {pix && (
                         <div className="pagamento-pix">
@@ -170,13 +169,17 @@ export default function PagamentoCheckout({ enviadoId, total, usuario, voltar })
             )}
 
             {/* ===============================
-                CARTÃO (SDK ENTRA AQUI)
+                CARTÃO
             =============================== */}
-            {aba === "cartao" && (
+            {aba === "cartao" && Number(total) > 0 && (
                 <div className="pagamento-cartao">
                     <CardPayment
                         initialization={{
                             amount: Number(total)
+                        }}
+                        onError={(e) => {
+                            console.error("MP ERROR:", e);
+                            setErro("Erro ao carregar pagamento com cartão");
                         }}
                         onSubmit={async (formData) => {
                             try {
@@ -196,14 +199,9 @@ export default function PagamentoCheckout({ enviadoId, total, usuario, voltar })
                                 const json = await r.json();
 
                                 if (!r.ok) {
-                                    if (json.motivo) {
-                                        setErro(`${json.mensagem}: ${json.motivo}`);
-                                    } else {
-                                        setErro(json.mensagem || "Pagamento não autorizado");
-                                    }
+                                    setErro(json.mensagem || "Pagamento não autorizado");
                                     return;
                                 }
-
 
                                 alert("Pagamento aprovado!");
                                 window.location.reload();
@@ -215,6 +213,10 @@ export default function PagamentoCheckout({ enviadoId, total, usuario, voltar })
                     />
                 </div>
             )}
+
+            {/* ===============================
+                RESUMO (SUBTOTAL / FRETE / TOTAL)
+            =============================== */}
             {resumo && (
                 <div className="pagamento-resumo">
                     <div>
@@ -237,21 +239,15 @@ export default function PagamentoCheckout({ enviadoId, total, usuario, voltar })
                     </div>
                 </div>
             )}
+
             {mensagemStatus && (
                 <div className={`pagamento-status ${statusPagamento}`}>
                     {mensagemStatus}
                 </div>
             )}
 
+            {erro && <p className="erro">{erro}</p>}
 
-            {/* ===============================
-                ERRO
-            =============================== */}
-            {erro && (
-                <p className="erro">
-                    {erro}
-                </p>
-            )}
             <button onClick={voltar}>
                 Voltar ao carrinho
             </button>
