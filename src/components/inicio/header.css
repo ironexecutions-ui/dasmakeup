@@ -84,11 +84,146 @@
 /* ===============================
    LADO DIREITO
 =============================== */
+/* ===============================
+   AJUSTE GERAL DO LADO DIREITO
+=============================== */
 .header-dir {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+    flex-wrap: nowrap;
 }
+
+/* ===============================
+   TABLETS
+=============================== */
+@media (max-width: 1024px) {
+
+    .header-box {
+        height: auto;
+        padding: 10px 18px;
+        flex-wrap: wrap;
+        row-gap: 12px;
+    }
+
+    .header-centro {
+        order: 3;
+        width: 100%;
+    }
+
+    .header-dir {
+        order: 2;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+/* ===============================
+   CELULARES GRANDES
+=============================== */
+@media (max-width: 768px) {
+
+    .header-box {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 14px;
+        border-radius: 26px;
+        gap: 12px;
+    }
+
+    .header-esq {
+        justify-content: center;
+    }
+
+    .header-centro {
+        width: 100%;
+    }
+
+    .header-dir {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .header-btn {
+        flex: 0 0 auto;
+        padding: 10px 14px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .header-btn-carrinho {
+        padding: 10px 12px;
+    }
+
+    .perfil-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* ===============================
+   CELULARES PEQUENOS
+=============================== */
+@media (max-width: 480px) {
+
+    .header-box {
+        padding: 12px;
+        border-radius: 22px;
+    }
+
+    .header-dir {
+        gap: 8px;
+    }
+
+    .header-btn {
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+
+    .header-ttl {
+        max-width: 120px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
+    }
+
+    .aviso-endereco {
+        top: 34px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
+
+/* ===============================
+   TELAS MUITO PEQUENAS
+=============================== */
+@media (max-width: 360px) {
+
+    .header-dir {
+        gap: 6px;
+    }
+
+    .header-btn {
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+
+    .header-ttl {
+        max-width: 90px;
+    }
+
+    .carrinho-badge {
+        min-width: 14px;
+        height: 14px;
+        font-size: 9px;
+    }
+}
+
 
 /* ===============================
    BOTÕES

@@ -209,7 +209,30 @@ export default function Header({ abrirFiltro, painelAtivo, setPainelAtivo }) {
                             >
                                 {usuario.nome}
                             </div>
+                            <div
+                                className={`header-btn`}
+
+                                onClick={() => {
+                                    setPainelAtivo("corpo");
+                                    setAbrirPerfil(true);
+                                }}
+                                style={{ cursor: "pointer", }}
+                            >
+                                Dados
+                            </div>
                             {/* Botão Carrinho */}
+
+
+                            <div className="perfil-wrapper">
+
+
+
+                                {mostrarAvisoEndereco && (
+                                    <div className="aviso-endereco">
+                                        Cadastre seu endereço por favor
+                                    </div>
+                                )}
+                            </div>
                             <button
                                 className={`header-btn header-btn-carrinho ${painelAtivo === "carrinho" ? "ativo" : ""}`}
                                 onClick={() => {
@@ -228,18 +251,6 @@ export default function Header({ abrirFiltro, painelAtivo, setPainelAtivo }) {
                                     </span>
                                 )}
                             </button>
-
-                            <div className="perfil-wrapper">
-
-
-
-                                {mostrarAvisoEndereco && (
-                                    <div className="aviso-endereco">
-                                        Cadastre seu endereço por favor
-                                    </div>
-                                )}
-                            </div>
-
                             {/* Botão Compras */}
                             <button
                                 style={{ marginRight: "20px" }}
@@ -254,17 +265,7 @@ ${comprasPendentes && painelAtivo !== "compras" ? "compras-piscando" : ""}
                                 {painelAtivo === "compras" ? "Produtos" : "Compras"}
                             </button>
 
-                            <div
-                                className={`header-btn`}
 
-                                onClick={() => {
-                                    setPainelAtivo("corpo");
-                                    setAbrirPerfil(true);
-                                }}
-                                style={{ cursor: "pointer", }}
-                            >
-                                Dados
-                            </div>
 
                         </>
                     )}
