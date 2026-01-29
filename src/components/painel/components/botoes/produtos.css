@@ -3,10 +3,9 @@
 ====================================================== */
 
 .ppp-produtos-container {
-    padding: 30px;
+    padding: 10px;
     background: #f1f5f9;
     width: 100%;
-    max-width: 80%;
     height: 94vh;
     box-sizing: border-box;
     overflow: hidden;
@@ -73,7 +72,6 @@
 
 .ppp-tabela-box {
     background: #020617;
-    width: 95%;
     max-width: 100%;
     border-radius: 12px;
     padding: 18px;

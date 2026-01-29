@@ -16,6 +16,7 @@ export default function Produtos() {
     const [form, setForm] = useState({
         id: null,
         produto: "",
+        codigo_barras: "",
         categoria: "",
         descricao: "",
         caracteristicas: [],
@@ -25,8 +26,11 @@ export default function Produtos() {
         altura: "",
         largura: "",
         comprimento: "",
-        preco: ""
+        preco: "",
+        preco_recebido: "",
+        data_vencimento: ""
     });
+
 
     function parseCaracteristicas(valor) {
         if (!valor) return [];
@@ -83,6 +87,7 @@ export default function Produtos() {
         setForm({
             id: null,
             produto: "",
+            codigo_barras: "",
             categoria: "",
             descricao: "",
             caracteristicas: [],
@@ -92,10 +97,13 @@ export default function Produtos() {
             altura: "",
             largura: "",
             comprimento: "",
-            preco: ""
+            preco: "",
+            preco_recebido: "",
+            data_vencimento: ""
         });
         setModoForm(true);
     }
+
 
     function editar(p) {
         setForm({
@@ -110,7 +118,11 @@ export default function Produtos() {
             altura: p.altura || "",
             largura: p.largura || "",
             comprimento: p.comprimento || "",
-            preco: p.preco || ""
+            preco: p.preco || "",
+            codigo_barras: p.codigo_barras || "",
+            preco_recebido: p.preco_recebido || "",
+            data_vencimento: p.data_vencimento || "",
+
         });
         setModoForm(true);
     }
@@ -374,7 +386,6 @@ export default function Produtos() {
                     />
 
                     {/* PRODUTO */}
-                    {/* PRODUTO */}
                     <label>Produto</label>
                     <input
                         ref={el => refs.current[0] = el}
@@ -384,17 +395,44 @@ export default function Produtos() {
                         }
                         onKeyDown={e => irProximo(e, 0)}
                     />
+                    <label>Código de barras</label>
+                    <input
+                        ref={el => refs.current[1] = el}
+                        value={form.codigo_barras}
+                        onChange={e => setForm({ ...form, codigo_barras: e.target.value })}
+                        onKeyDown={e => irProximo(e, 1)}
+                    />
+
+                    <label>Preço recebido</label>
+                    <input
+                        ref={el => refs.current[2] = el}
+                        type="number"
+                        step="0.01"
+                        value={form.preco_recebido}
+                        onChange={e => setForm({ ...form, preco_recebido: e.target.value })}
+                        onKeyDown={e => irProximo(e, 2)}
+                    />
+
+                    <label>Data de vencimento</label>
+                    <input
+                        ref={el => refs.current[3] = el}
+                        type="date"
+                        value={form.data_vencimento}
+                        onChange={e => setForm({ ...form, data_vencimento: e.target.value })}
+                        onKeyDown={e => irProximo(e, 3)}
+                    />
+
 
                     {/* CATEGORIA */}
                     <label>Categoria</label>
                     <input
-                        ref={el => refs.current[1] = el}
+                        ref={el => refs.current[4] = el}
+                        onKeyDown={e => irProximo(e, 4)}
                         list="lista-categorias"
                         value={form.categoria}
                         onChange={e =>
                             setForm({ ...form, categoria: primeiraMaiuscula(e.target.value) })
                         }
-                        onKeyDown={e => irProximo(e, 1)}
                     />
 
                     {/* DESCRIÇÃO */}
